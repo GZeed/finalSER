@@ -17,7 +17,8 @@ public class ControleurGeneral {
 	private ControleurProjections ctrProjections; 
 	private ControleurFilms ctrFilms;
 
-	//private ControleurWFC ctrWFC;
+	private ControleurWFC ctrWFC;
+
 	private ControleurMedia ctrMedia; 
 	private ControleurXMLCreation ctrXMLCreation;
 
@@ -31,6 +32,13 @@ public class ControleurGeneral {
 
 		ctrMedia = new ControleurMedia(this, mainGUI, ormAccess);
 		ctrXMLCreation = new ControleurXMLCreation(this, mainGUI, ormAccess);
+
+		try {
+			ctrWFC = new ControleurWFC(this, mainGUI);
+			sendJSONToMedia();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void createXStreamXML(){ctrXMLCreation.createXStreamXML();}
