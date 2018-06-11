@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PlexMedia.iml" filepath="$PROJECT_DIR$/PlexMedia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WFC-Interfaces/WFC-Interfaces.iml" filepath="$PROJECT_DIR$/../WFC-Interfaces/WFC-Interfaces.iml" />
     </modules>
   </component>
 </project>
