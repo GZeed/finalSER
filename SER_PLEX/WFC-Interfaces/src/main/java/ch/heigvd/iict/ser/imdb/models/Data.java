@@ -10,6 +10,7 @@ public class Data implements Serializable {
 	private long 				version = -1L;
 	private Map<Long, Movie> 	movies 	= null;
 	private Map<Long, Person> 	persons = null;
+	private String				jsonData = "";
 	
 	public long getVersion() { return version; }
 	public void setVersion(long version) { this.version = version; }
@@ -19,5 +20,6 @@ public class Data implements Serializable {
 	
 	public Map<Long, Person> getPersons() { return persons; }
 	public void setPersons(Map<Long, Person> persons) { this.persons = persons; }
-	
+	public String getJsonData() {return jsonData;}
+	public void setJsonData(String str) {this.jsonData = str;}
 }
