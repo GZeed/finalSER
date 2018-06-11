@@ -1,0 +1,76 @@
+{
+  "projections": [
+    {
+      "id": 7793,
+      "dateHeure": "13:55:18:07:55",
+      "film": {
+        "id": 2053403,
+        "titre": "Casino Royale"
+      },
+      "acteurs": [
+        {
+          "id": 370864,
+          "nom": "Craig, Daniel"
+        },
+        {
+          "id": 1192260,
+          "nom": "Mikkelsen, Mads"
+        }
+      ]
+    },
+    {
+      "id": 7801,
+      "dateHeure": "13:51:18:08:51",
+      "film": {
+        "id": 2822603,
+        "titre": "Tomorrow Never Dies"
+      },
+      "acteurs": [
+        {
+          "id": 220515,
+          "nom": "Brosnan, Pierce"
+        },
+        {
+          "id": 3047006,
+          "nom": "Yeoh, Michelle"
+        }
+      ]
+    },
+    {
+      "id": 7795,
+      "dateHeure": "13:56:18:07:56",
+      "film": {
+        "id": 2304289,
+        "titre": "Inglourious Basterds"
+      },
+      "acteurs": [
+        {
+          "id": 1404087,
+          "nom": "Pitt, Brad"
+        },
+        {
+          "id": 1877030,
+          "nom": "Waltz, Christoph"
+        }
+      ]
+    },
+    {
+      "id": 7796,
+      "dateHeure": "13:56:18:07:56",
+      "film": {
+        "id": 2136717,
+        "titre": "Django Unchained"
+      },
+      "acteurs": [
+        {
+          "id": 579122,
+          "nom": "Foxx, Jamie"
+        },
+        {
+          "id": 449474,
+          "nom": "DiCaprio, Leonardo"
+        }
+      ]
+    }
+  ]
+}

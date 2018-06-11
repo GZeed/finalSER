@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "projections": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "dateHeure": {
+              "type": "string"
+            },
+            "film": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "titre": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "titre"
+              ]
+            },
+            "acteurs": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "nom": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "nom"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "nom": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "nom"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "dateHeure",
+            "film",
+            "acteurs"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "projections"
+  ]
+}
