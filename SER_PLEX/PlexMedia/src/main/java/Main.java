@@ -2,12 +2,22 @@ import ch.heigvd.iict.ser.imdb.models.Data;
 import ch.heigvd.iict.ser.rmi.IClientApi;
 import ch.heigvd.iict.ser.rmi.IServerApi;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.server.RMISocketFactory;
 import java.rmi.server.UnicastRemoteObject;
 
 public class Main extends Application {
+
     public static void main(String[] args){
         System.out.println("start PlexMedia");
         launch(args);
@@ -30,7 +40,42 @@ public class Main extends Application {
      */
     public void start(Stage primaryStage) throws Exception {
 
+        primaryStage.setTitle("GUIPlexMedia");
+        Button button= new Button("getProjections");
+
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+                System.out.println("click btn_getProjections");
+                RmiClient rmiClient = null;
+                try {
+                    rmiClient = new RmiClient((IServerApi) Naming.lookup("//localhost:4321/RmiService"));
+                } catch (RemoteException e1) {
+                    e1.printStackTrace();
+                } catch (NotBoundException e1) {
+                    e1.printStackTrace();
+                } catch (MalformedURLException e1) {
+                    e1.printStackTrace();
+                }
+                try {
+                    rmiClient.getProjectionsFromPlexAdmin();
+                } catch (RemoteException e1) {
+                    e1.printStackTrace();
+                }
+
+            }
+        });
+
+        StackPane layout= new StackPane();
+        layout.getChildren().add(button);
+
+        Scene scene1= new Scene(layout, 300, 250);
+        primaryStage.setScene(scene1);
+
+        primaryStage.show();
+
     }
+
+
 
     private class RmiClient extends UnicastRemoteObject implements IClientApi {
         private IServerApi serverApi = null;
