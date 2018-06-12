@@ -1,0 +1,40 @@
+{
+  "projections": [
+    {
+      "id": 2597,
+      "dateHeure": "12:58:18:01:58",
+      "film": {
+        "id": 2304289,
+        "titre": "Inglourious Basterds"
+      },
+      "acteurs": [
+        {
+          "id": 1404087,
+          "nom": "Pitt, Brad"
+        },
+        {
+          "id": 1877030,
+          "nom": "Waltz, Christoph"
+        }
+      ]
+    },
+    {
+      "id": 2598,
+      "dateHeure": "12:58:18:01:58",
+      "film": {
+        "id": 2510708,
+        "titre": "Ocean\u0027s Thirteen"
+      },
+      "acteurs": [
+        {
+          "id": 334121,
+          "nom": "Clooney, George"
+        },
+        {
+          "id": 397344,
+          "nom": "Damon, Matt"
+        }
+      ]
+    }
+  ]
+}

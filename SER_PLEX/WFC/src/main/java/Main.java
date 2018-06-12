@@ -1,6 +1,10 @@
 
 import java.io.Serializable;
+import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.Wrapper;
 import java.util.Observable;
 import java.util.Observer;
@@ -13,7 +17,7 @@ import ch.heigvd.iict.ser.imdb.models.Data;
 
 public class Main extends Observable implements IServerApi {
 
-	private IServerApi serverApi = null;
+	public IServerApi serverApi = null;
 	static {
 		// this will load the MySQL driver, each DB has its own driver
 		try {
@@ -32,9 +36,19 @@ public class Main extends Observable implements IServerApi {
 
 	private static Scanner scanner = new Scanner(System.in);
 
-	public static void main(String[] args) {
-		Main main = new Main();
-		main.run();
+	public static void main(String[] args) throws RemoteException {
+		Main mRS = new Main();
+	}
+	public Main() throws RemoteException {
+
+		Registry rmiRegistry = LocateRegistry.createRegistry(9999);
+		this.serverApi = (IServerApi) UnicastRemoteObject.exportObject(this, 9999);
+		try {
+			rmiRegistry.bind("RmiService", this.serverApi);
+		} catch (AlreadyBoundException e) {
+			e.printStackTrace();
+		}
+		this.run();
 	}
 
 	private Data lastData = null;
